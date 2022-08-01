@@ -27,6 +27,21 @@ foreach (var item in depts)
     Console.WriteLine();
 }
 
+// Insert a new department ***********
+
+DapperDepartmentRepository newDeptName = new DapperDepartmentRepository(conn);
+
+Console.WriteLine("Please provide a new department name to insert: ");
+var userInputDeptName = Console.ReadLine(); 
+
+newDeptName.InsertDepartment(userInputDeptName);
+
+var deptName = newDeptName.GetAllDepartments();
+foreach (var item in deptName)
+{
+    Console.WriteLine($"Department Name to Insert: {item.Name}");
+}
+
 // Create a DapperProductRepository Class that conforms to the IProductRepository interface *************************
 
 DapperProductRepository repoProd = new DapperProductRepository(conn);
