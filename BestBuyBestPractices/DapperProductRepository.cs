@@ -16,6 +16,8 @@ namespace BestBuyBestPractices
         {
             _connection = connection;
         }
+
+        // Create 
         public void CreateProduct(string name, double price, int categoryID)
         {
             _connection.Execute("INSERT INTO products(Name, Price, CategoryID) VALUES (@productName, @productPrice, @ProductCategoryID);",
@@ -27,6 +29,8 @@ namespace BestBuyBestPractices
             return _connection.Query<Product>("SELECT * FROM products;");
         }
 
+
+        // Delete
         public void DeleteProduct(int productID)
         {
             _connection.Execute("DELETE FROM products WHERE ProductID = @productID;", 
@@ -38,7 +42,7 @@ namespace BestBuyBestPractices
             Console.WriteLine("Your product has been sucessfully deleted!");
         }
 
-
+        // Update
         public void UpdateProduct(int productID, double price)
         {
             _connection.Execute("UPDATE products SET Price = @productPrice WHERE productID = @productID;",

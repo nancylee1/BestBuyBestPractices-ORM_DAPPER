@@ -10,8 +10,8 @@ var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
-string connString = config.GetConnectionString("DefaultConnection");
-IDbConnection conn = new MySqlConnection(connString);
+string connString = config.GetConnectionString("DefaultConnection"); // getting the connection string from our appsettings.json file
+IDbConnection conn = new MySqlConnection(connString); // wrapping the connection above to an object called "conn" we create
 #endregion
 
 // EXERCISE 2 - CREATING A NEW PRODUCT UTILIZING DAPPER *******************************************
@@ -20,7 +20,7 @@ DapperDepartmentRepository repo = new DapperDepartmentRepository(conn);
 
 Console.WriteLine("Hello user, here are the current departments:");
 
-var depts = repo.GetAllDepartments();
+var depts = repo.GetAllDepartments(); // creating a variable to store the collection
 foreach (var item in depts)
 {
     Console.WriteLine($"Department ID: {item.DepartmentID} Name: {item.Name}");
