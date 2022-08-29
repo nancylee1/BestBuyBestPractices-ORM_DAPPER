@@ -1,6 +1,6 @@
 # :computer: MySQL Best Buy Database - ORM & DAPPER
 
-By using Dapper, we can significantly reduce the amount of coding required for database writes. In this instance, I am using MySQL - Best Buy database (totall made up fields of course :robot: ) as an example.
+By using Dapper, we can significantly reduce the amount of coding required for database writes. In this instance, I am using MySQL - Best Buy database (totally made up fields of course :robot: ) as an example.
 
 I created a .Net Core Console Application, added appsettings.json (with Git ignore), then added 3 Nuget packages: Dapper, Microsoft.Extensions.Configuration.Json package, 
 and MySql.Data to config and connection string. I then created using C# the Class, IEnumerable Repository Interface, Repository Class, and Methods. 
